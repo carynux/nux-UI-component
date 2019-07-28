@@ -1,5 +1,5 @@
 <template>
-    <button class="g-button"  :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
         <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
         <g-icon class="loading icon" v-if="loading" name="loading"></g-icon>
         <div class="content">
@@ -10,16 +10,16 @@
 
 <script>
     export default {
-        props:{
-            icon:{},
-            loading:{
+        props: {
+            icon: {},
+            loading: {
                 type: Boolean,
                 default: false
             },
-            iconPosition:{
-                type:String,
-                default:'left',
-                validator(value){
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
                     return value === 'left' || value === 'right';
                     // 此处是属性的检查器，返回false会报错
                 }
@@ -30,13 +30,14 @@
 
 <style lang="scss">
     @keyframes spin {
-        0%{
+        0% {
             transform: rotate(0deg);
         }
-        100%{
+        100% {
             transform: rotate(360deg);
         }
     }
+
     .g-button {
         font-size: var(--font-size);
         height: var(--button-height);
@@ -48,6 +49,7 @@
         justify-content: center;
         align-items: center;
         vertical-align: middle;
+
         &:hover {
             border-color: var(--border-color-hover);
         }
@@ -59,26 +61,32 @@
         &:focus {
             outline: none;
         }
-        > .content{
-            order:2
+
+        > .content {
+            order: 2
         }
-        > .icon{
-            order:1;
+
+        > .icon {
+            order: 1;
             margin-right: .3em;
         }
-        &.icon-right{
-            > .content{
-                order:1
+
+        &.icon-right {
+            > .content {
+                order: 1
             }
-            > .icon{
-                order:2;
+
+            > .icon {
+                order: 2;
                 margin-left: .3em;
                 margin-right: 0;
             }
         }
-        .loading{
+
+        .loading {
             animation: spin 2s infinite linear;
         }
+
         /*&表示当前的选择器*/
         /*>表示选择子代，孙代不选择*/
     }

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>NUX</title>
+    <link rel="icon" type="image/png" href="./assets/images/logo-n.png" sizes="32x32">
 </head>
 <style>
     * {
@@ -44,6 +45,14 @@
     <g-button icon="settings" :loading="loading1" @click="loading1 = !loading1">
         我爱js
     </g-button>
+    <g-button-group>
+        <g-button icon="left">
+            上一页
+        </g-button>
+        <g-button icon="right" icon-position="right">
+            下一页
+        </g-button>
+    </g-button-group>
     <g-icon name="download"></g-icon>
 </div>
 
