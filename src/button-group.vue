@@ -8,9 +8,9 @@
     export default {
         name: "button-group",
         mounted() {
-            for(let node of this.$el.children){
+            for (let node of this.$el.children) {
                 let name = node.nodeName.toLowerCase()
-                if(name !=='button'){
+                if (name !== 'button') {
                     console.error(`g-button-group的子元素应该全是g-button,但是你写的是${name}`)
                 }
             }
@@ -25,7 +25,11 @@
 
         > .g-button {
             border-radius: 0;
-            margin-left: -1px;
+
+            &:not(:first-child) {
+                margin-left: -1px;
+            }
+
             &:first-child {
                 border-top-left-radius: var(--border-radius);
                 border-bottom-left-radius: var(--border-radius);
@@ -35,7 +39,8 @@
                 border-top-right-radius: var(--border-radius);
                 border-bottom-right-radius: var(--border-radius);
             }
-            &:hover{
+
+            &:hover {
                 position: relative;
                 z-index: 1;
             }
