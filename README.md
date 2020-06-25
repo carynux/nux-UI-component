@@ -6,3 +6,8 @@
 ```
 *{box-sizing: border-box;}
 ```
+
+现在的打包工具是parcel， 启动命令是
+```
+npx parcel index.html
+```
