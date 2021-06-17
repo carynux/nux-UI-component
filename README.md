@@ -1,6 +1,8 @@
 # NUX-一个vue的UI组件
 作者：焦政
 
+[demo预览](https://jiaozheng.me/NUX-UI-component/index.html)
+
 使用本框架前，请在 CSS 中开启 border-box
 
 ```
